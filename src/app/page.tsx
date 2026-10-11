@@ -152,6 +152,28 @@ console.log(player, score);
         </div>
       </section>
 
+      {/* Roadmap teaser */}
+      <section className="mx-auto max-w-[1100px] px-4 pt-10 sm:px-6">
+        <div className="relative overflow-hidden rounded-[16px] border p-5 sm:p-8" style={{ borderColor: "var(--border)", background: "var(--surface)" }}>
+          <div className="absolute -right-8 -top-8 h-40 w-40 rounded-full bg-[var(--accent-soft)] blur-3xl" aria-hidden />
+          <div className="absolute right-6 top-6 hidden text-[72px] font-bold leading-none text-white/[0.04] sm:block" aria-hidden>ROAD</div>
+          <div className="relative">
+            <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest text-[var(--accent)]"><span className="h-2 w-2 rounded-full bg-[var(--accent)]" aria-hidden /> ROADMAP</p>
+            <h2 className="mt-2 text-[22px] font-semibold tracking-tight sm:text-[26px]">Your path from zero to shipped</h2>
+            <p className="mt-2 max-w-[60ch] text-sm leading-6 text-[var(--text-muted)]">Eight phases, career paths, and a timeline that looks good on a phone. Pick frontend, TypeScript, or indie builder — then follow the steps.</p>
+            <div className="mt-4 flex flex-wrap gap-2 text-xs">
+              <span className="rounded-full bg-white px-3 py-1.5 font-medium text-black">08 phases · 27 lessons</span>
+              <span className="rounded-full border px-3 py-1.5 text-[var(--text-muted)]" style={{ borderColor: "var(--border)" }}>3 career paths</span>
+              <span className="rounded-full border px-3 py-1.5 text-[var(--text-muted)]" style={{ borderColor: "var(--border)" }}>~8h total</span>
+            </div>
+            <div className="mt-5 flex flex-wrap gap-3">
+              <a href="/roadmap" className="inline-flex h-11 items-center gap-2 rounded-full bg-white px-6 text-sm font-semibold text-black hover:bg-zinc-100">View roadmap</a>
+              <a href="/roadmap" className="inline-flex h-11 items-center gap-2 rounded-full border px-6 text-sm font-semibold hover:bg-[var(--surface-raised)]" style={{ borderColor: "var(--border)" }}>Choose a career →</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Syllabus note */}
       <section className="mx-auto max-w-[1100px] px-4 pt-10 sm:px-6">
         <div className="rounded-[16px] border p-5 sm:p-6" style={{ borderColor: "var(--border)", background: "var(--surface-raised)" }}>

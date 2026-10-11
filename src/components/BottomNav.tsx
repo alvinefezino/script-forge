@@ -1,20 +1,21 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { House, Library, GraduationCap, Hammer } from "lucide-react";
+import { House, Library, GraduationCap, Hammer, Route } from "lucide-react";
 
 const items = [
   { href: "/", label: "Home", icon: House },
   { href: "/modules/js-foundations", label: "Modules", icon: Library },
   { href: "/learn/m1l1", label: "Learn", icon: GraduationCap },
   { href: "/projects", label: "Projects", icon: Hammer },
+  { href: "/roadmap", label: "Roadmap", icon: Route },
 ];
 
 export function BottomNav() {
   const pathname = usePathname();
   return (
     <nav className="fixed inset-x-0 bottom-0 z-40 border-t bg-[var(--bg)] pb-[env(safe-area-inset-bottom)] md:hidden" style={{ borderColor: "var(--border)" }}>
-      <div className="mx-auto grid max-w-[500px] grid-cols-4">
+      <div className="mx-auto grid max-w-[500px] grid-cols-5">
         {items.map((it) => {
           const active = pathname === it.href || (it.href !== "/" && pathname.startsWith(it.href));
           return (

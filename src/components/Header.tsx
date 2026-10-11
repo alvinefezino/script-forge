@@ -19,6 +19,7 @@ export function Header() {
           <Link href="/modules/js-foundations" className={`rounded-full px-3 py-1.5 text-sm ${isActive("/modules") ? "bg-white text-black" : "text-[var(--text-muted)] hover:text-white hover:bg-[var(--surface-raised)]"}`}>Modules</Link>
           <Link href="/learn/m1l1" className={`rounded-full px-3 py-1.5 text-sm ${isActive("/learn") ? "bg-white text-black" : "text-[var(--text-muted)] hover:text-white hover:bg-[var(--surface-raised)]"}`}>Learn</Link>
           <Link href="/projects" className={`rounded-full px-3 py-1.5 text-sm ${isActive("/projects") ? "bg-white text-black" : "text-[var(--text-muted)] hover:text-white hover:bg-[var(--surface-raised)]"}`}>Projects</Link>
+          <Link href="/roadmap" className={`rounded-full px-3 py-1.5 text-sm ${isActive("/roadmap") ? "bg-white text-black" : "text-[var(--text-muted)] hover:text-white hover:bg-[var(--surface-raised)]"}`}>Roadmap</Link>
         </nav>
         <div className="flex items-center gap-2">
           <Link href="/learn/m1l1" className="hidden rounded-full bg-[var(--accent)] px-4 py-2 text-sm font-semibold text-black hover:bg-[var(--accent-hover)] active:bg-[var(--accent-pressed)] md:inline-flex">
@@ -40,7 +41,8 @@ export function Header() {
             <Link onClick={() => setOpen(false)} href="/" className="rounded-[10px] border px-4 py-3 text-sm font-medium" style={{ borderColor: "var(--border)" }}>Home</Link>
             <Link onClick={() => setOpen(false)} href="/modules/js-foundations" className="rounded-[10px] border px-4 py-3 text-sm font-medium" style={{ borderColor: "var(--border)" }}>Modules</Link>
             <Link onClick={() => setOpen(false)} href="/learn/m1l1" className="rounded-[10px] border px-4 py-3 text-sm font-medium" style={{ borderColor: "var(--border)" }}>Learn</Link>
-            <Link onClick={() => setOpen(false)} href="/projects" className="rounded-[10px] border bg-white px-4 py-3 text-sm font-semibold text-black" style={{ borderColor: "var(--border)" }}>Projects</Link>
+            <Link onClick={() => setOpen(false)} href="/projects" className="rounded-[10px] border px-4 py-3 text-sm font-medium" style={{ borderColor: "var(--border)" }}>Projects</Link>
+            <Link onClick={() => setOpen(false)} href="/roadmap" className="rounded-[10px] border bg-white px-4 py-3 text-sm font-semibold text-black" style={{ borderColor: "var(--border)" }}>Roadmap</Link>
           </div>
         </div>
       )}
