@@ -4,6 +4,8 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { BottomNav } from "@/components/BottomNav";
 import { ProgressProvider } from "@/components/ProgressProvider";
+import { AuthProvider } from "@/components/AuthProvider";
+import { ScrollProgress } from "@/components/ScrollProgress";
 import { ServiceWorkerRegister } from "@/components/ServiceWorkerRegister";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
@@ -24,7 +26,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-[var(--bg)] text-[var(--text)]">
-        <ProgressProvider>
+        <ScrollProgress />
+        <AuthProvider>
+          <ProgressProvider>
           <Header />
           <main className="flex-1 pb-16 md:pb-0">{children}</main>
           <BottomNav />
@@ -33,7 +37,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <p>Script Forge. Learn JavaScript and TypeScript by doing. Built for mobile first learning.</p>
             <p className="mt-1">Curriculum inspired by boot.dev and freeCodeCamp. Content is original and explanatory.</p>
           </footer>
-        </ProgressProvider>
+          </ProgressProvider>
+        </AuthProvider>
       </body>
     </html>
   );
