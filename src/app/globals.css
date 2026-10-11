@@ -45,6 +45,23 @@ body {
 .hairline { border: 1px solid var(--border); }
 .hairline-strong { border: 1px solid var(--border-strong); }
 
+/* Hermes Design: animate transform and opacity only, under 300ms */
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slide-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes modal-in { from { opacity: 0; transform: translateY(8px) scale(0.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes toast-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes shake { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-3px)} 75%{transform:translateX(3px)} }
+@keyframes pulse-subtle { 0%,100%{opacity:1} 50%{opacity:0.7} }
+@keyframes bounce-subtle { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-3px)} }
+
+.animate-fade-in { animation: fade-in 180ms ease-out both; }
+.animate-in { animation: slide-in 220ms ease-out both; }
+.animate-modal-in { animation: modal-in 220ms ease-out both; }
+.animate-toast-in { animation: toast-in 200ms ease-out both; }
+.animate-shake { animation: shake 220ms ease-out both; }
+.animate-pulse-subtle { animation: pulse-subtle 1.6s ease-in-out infinite; }
+.animate-bounce-subtle { animation: bounce-subtle 1.4s ease-in-out infinite; }
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { curriculum } from "@/data/curriculum";
 import { ModuleCard } from "@/components/ModuleCard";
 import { ArrowRight, Play, CheckCircle2, Smartphone, Code2, GraduationCap } from "lucide-react";
+import { HomeGamification } from "@/components/HomeGamification";
 
 export default function Home() {
   const totalLessons = curriculum.reduce((s, m) => s + m.lessons.length, 0);
@@ -91,6 +92,8 @@ console.log(player, score);
           </div>
         </div>
       </section>
+
+      <HomeGamification />
 
       {/* Tracks */}
       <section className="mx-auto max-w-[1100px] px-4 pt-10 sm:px-6 sm:pt-12">

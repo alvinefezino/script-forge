@@ -7,6 +7,8 @@ import { ProgressProvider } from "@/components/ProgressProvider";
 import { AuthProvider } from "@/components/AuthProvider";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { ServiceWorkerRegister } from "@/components/ServiceWorkerRegister";
+import { ToastStack } from "@/components/ToastStack";
+import { AchievementModal } from "@/components/AchievementModal";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
@@ -16,7 +18,7 @@ export const viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Script Forge — Learn JavaScript and TypeScript by doing",
+  title: "Script Forge - Learn JavaScript and TypeScript by doing",
   description: "Mobile first, explanatory lessons for JavaScript and TypeScript. Inspired by boot.dev and freeCodeCamp, built for learning on your phone.",
   manifest: "/manifest.webmanifest",
   appleWebApp: { capable: true, title: "Script Forge", statusBarStyle: "black-translucent" },
@@ -31,6 +33,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <ProgressProvider>
           <Header />
           <main className="flex-1 pb-16 md:pb-0">{children}</main>
+          <ToastStack />
+          <AchievementModal />
           <BottomNav />
           <ServiceWorkerRegister />
           <footer className="border-t px-4 py-8 text-center text-xs leading-5 text-[var(--text-faint)] md:py-10" style={{ borderColor: "var(--border)" }}>
