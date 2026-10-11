@@ -15,9 +15,10 @@ export function Header() {
       <div className="mx-auto flex h-14 max-w-[1100px] items-center justify-between px-4 sm:px-6">
         <Logo />
         <nav className="hidden items-center gap-1 md:flex">
-          <Link href="/" className={`rounded-full px-3 py-1.5 text-sm ${isActive("/") && pathname === "/" ? "bg-white text-black" : "text-[var(--text-muted)] hover:text-white hover:bg-[var(--surface-raised)]"}`}>Home</Link>
+          <Link href="/" className={`rounded-full px-3 py-1.5 text-sm ${pathname === "/" ? "bg-white text-black" : "text-[var(--text-muted)] hover:text-white hover:bg-[var(--surface-raised)]"}`}>Home</Link>
           <Link href="/modules/js-foundations" className={`rounded-full px-3 py-1.5 text-sm ${isActive("/modules") ? "bg-white text-black" : "text-[var(--text-muted)] hover:text-white hover:bg-[var(--surface-raised)]"}`}>Modules</Link>
           <Link href="/learn/m1l1" className={`rounded-full px-3 py-1.5 text-sm ${isActive("/learn") ? "bg-white text-black" : "text-[var(--text-muted)] hover:text-white hover:bg-[var(--surface-raised)]"}`}>Learn</Link>
+          <Link href="/projects" className={`rounded-full px-3 py-1.5 text-sm ${isActive("/projects") ? "bg-white text-black" : "text-[var(--text-muted)] hover:text-white hover:bg-[var(--surface-raised)]"}`}>Projects</Link>
         </nav>
         <div className="flex items-center gap-2">
           <Link href="/learn/m1l1" className="hidden rounded-full bg-[var(--accent)] px-4 py-2 text-sm font-semibold text-black hover:bg-[var(--accent-hover)] active:bg-[var(--accent-pressed)] md:inline-flex">
@@ -37,8 +38,9 @@ export function Header() {
         <div className="border-t px-4 py-4 md:hidden" style={{ borderColor: "var(--border)", background: "var(--surface)" }}>
           <div className="flex flex-col gap-2">
             <Link onClick={() => setOpen(false)} href="/" className="rounded-[10px] border px-4 py-3 text-sm font-medium" style={{ borderColor: "var(--border)" }}>Home</Link>
-            <Link onClick={() => setOpen(false)} href="/modules/js-foundations" className="rounded-[10px] border px-4 py-3 text-sm font-medium" style={{ borderColor: "var(--border)" }}>All modules</Link>
-            <Link onClick={() => setOpen(false)} href="/learn/m1l1" className="rounded-[10px] bg-[var(--accent)] px-4 py-3 text-sm font-semibold text-black text-center">Start with Variables</Link>
+            <Link onClick={() => setOpen(false)} href="/modules/js-foundations" className="rounded-[10px] border px-4 py-3 text-sm font-medium" style={{ borderColor: "var(--border)" }}>Modules</Link>
+            <Link onClick={() => setOpen(false)} href="/learn/m1l1" className="rounded-[10px] border px-4 py-3 text-sm font-medium" style={{ borderColor: "var(--border)" }}>Learn</Link>
+            <Link onClick={() => setOpen(false)} href="/projects" className="rounded-[10px] border bg-white px-4 py-3 text-sm font-semibold text-black" style={{ borderColor: "var(--border)" }}>Projects</Link>
           </div>
         </div>
       )}

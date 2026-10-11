@@ -134,6 +134,24 @@ console.log(player, score);
         </div>
       </section>
 
+      {/* Projects teaser */}
+      <section className="mx-auto max-w-[1100px] px-4 pt-10 sm:px-6">
+        <div className="rounded-[16px] border p-5 sm:p-8" style={{ borderColor: "var(--border)", background: "var(--surface)" }}>
+          <p className="text-xs font-semibold tracking-widest text-[var(--accent)]">PROJECTS</p>
+          <h2 className="mt-2 text-[22px] font-semibold tracking-tight sm:text-[26px]">Build three real apps with Next.js</h2>
+          <p className="mt-2 max-w-[60ch] text-sm leading-6 text-[var(--text-muted)]">Each project is a set of steps you follow in your terminal and editor. Learn how Next.js works, how to install it, and what every dependency does, then ship a portfolio, a blog, and a storefront.</p>
+          <div className="mt-4 flex flex-wrap gap-3">
+            <a href="/projects" className="inline-flex h-11 items-center gap-2 rounded-full bg-[var(--accent)] px-6 text-sm font-semibold text-black hover:bg-[var(--accent-hover)]">View projects</a>
+            <a href="/projects/portfolio" className="inline-flex h-11 items-center gap-2 rounded-full border px-6 text-sm font-semibold hover:bg-[var(--surface-raised)]" style={{ borderColor: "var(--border)" }}>Start with Portfolio</a>
+          </div>
+          <div className="mt-4 flex flex-wrap gap-2 text-xs">
+            <span className="rounded-full border px-3 py-1.5 text-[var(--text-muted)]" style={{ borderColor: "var(--border)" }}>Portfolio - Beginner - 55 min</span>
+            <span className="rounded-full border px-3 py-1.5 text-[var(--text-muted)]" style={{ borderColor: "var(--border)" }}>Blog - Intermediate - 60 min</span>
+            <span className="rounded-full border px-3 py-1.5 text-[var(--text-muted)]" style={{ borderColor: "var(--border)" }}>Storefront - Advanced - 75 min</span>
+          </div>
+        </div>
+      </section>
+
       {/* Syllabus note */}
       <section className="mx-auto max-w-[1100px] px-4 pt-10 sm:px-6">
         <div className="rounded-[16px] border p-5 sm:p-6" style={{ borderColor: "var(--border)", background: "var(--surface-raised)" }}>
