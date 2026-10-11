@@ -233,3 +233,52 @@ export const howNextWorks = [
   { title: "Rendering choices", desc: "Static: built once. Dynamic: built per request. ISR: static with revalidate. Pick per route with fetch cache, generateStaticParams, or export const dynamic." },
   { title: "Turbopack and bundling", desc: "Dev server uses Turbopack for fast HMR. Build outputs optimized chunks, code splits by route, and inlines critical CSS." },
 ];
+
+export const pathsExplained = [
+  {
+    title: "What a directory is",
+    desc: "A directory (folder) holds files and other directories. Your project is a tree: my-portfolio/ is the root, src/ and public/ are branches, page.tsx is a leaf.",
+    example: "my-portfolio/\n├─ src/app/page.tsx     ← your route\n├─ src/app/layout.tsx    ← wraps every route\n├─ public/shoe.jpg       ← static file, served as /shoe.jpg\n├─ package.json          ← dependencies list\n├─ node_modules/         ← installed packages (do not edit)\n└─ .next/                ← build output (generated)",
+  },
+  {
+    title: "Absolute vs relative paths",
+    desc: "Absolute starts from the root. Relative starts from where you are now.",
+    example: "# absolute (from project root or drive)\n/src/app/page.tsx\nC:/Users/you/my-portfolio/src/app/page.tsx\n/public/shoe.jpg  → served as /shoe.jpg\n\n# relative (from current file)\n./page.tsx     → same folder\n../layout.tsx  → one folder up\n../../data.ts  → two folders up\n\n# in code\nimport Button from \"./Button\"      // relative\nimport { Logo } from \"@/components/Logo\" // absolute alias @/ = src/",
+  },
+  {
+    title: "Why @/ matters in Next.js",
+    desc: "Without it, imports become ../../../components/Button. With paths alias @/* → src/* in tsconfig.json, you write @/components/Button from anywhere. create-next-app sets this up for you.",
+    example: "// tsconfig.json\n{\n  \"compilerOptions\": {\n    \"paths\": { \"@/*\": [\"./src/*\"] }\n  }\n}\n// then\nimport { Logo } from \"@/components/Logo\" // clean, no ..",
+  },
+  {
+    title: "URLs mirror your folders",
+    desc: "In App Router, the folder path IS the URL. No router config file.",
+    example: "src/app/page.tsx              → /\nsrc/app/about/page.tsx       → /about\nsrc/app/work/[id]/page.tsx   → /work/123 (dynamic)\nsrc/app/api/cart/route.ts    → /api/cart (API, not a page)",
+  },
+];
+
+export const whyNextVsPlain = {
+  intro: "You can open an .html file by double-clicking it, or serve it with Live Server. It works — until your app grows past one page.",
+  rows: [
+    { plain: "One HTML file per page, copy-paste the nav everywhere", next: "One layout.tsx wraps every page; Link prefetches the next route" },
+    { plain: "Live Server just serves files; you reload manually on change", next: "Turbopack HMR updates the browser instantly, no full reload" },
+    { plain: "No bundling — you ship every script tag as-is", next: "Build splits code by route, inlines critical CSS, chunks JS" },
+    { plain: "No components — duplicate HTML, hard to reuse", next: "React components compose; change Button once, it updates everywhere" },
+    { plain: "Images are raw <img>; heavy, layout shift", next: "next/image resizes, lazy-loads, and prevents shift automatically" },
+    { plain: "No data fetching pattern; you write fetch + DOM by hand", next: "Server Components fetch on the server and send HTML — no client JS needed for data" },
+    { plain: "file:// cannot fetch, has CORS quirks, no routing", next: "Dev server is http://localhost:3000 — real HTTP, real routing" },
+    { plain: "No TypeScript, no linting unless you wire it", next: "TypeScript + ESLint are scaffolded and checked on build" },
+  ],
+  closing: "HTML + Live Server is fine for a single static page. Next.js is for apps: routing, data, images, fonts, types, and deploying with one command. When you outgrow copy-paste, you reach for a framework.",
+};
+
+export const offlineHow = {
+  title: "How offline works here",
+  points: [
+    "manifest.ts tells the browser this is an installable app (name, icons, theme).",
+    "public/sw.js is a Service Worker: it caches pages you visit and serves them when offline.",
+    "First visit needs internet; after that, cached lessons and projects open without it.",
+    "Add to Home Screen from your browser menu to open like a native app.",
+  ],
+};
+
