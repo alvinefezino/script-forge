@@ -6,10 +6,10 @@ export const metadata = { title: "Log in — Script Forge" };
 
 export default function LoginPage() {
   return (
-    <div className="min-h-[calc(100dvh-56px)] md:min-h-[calc(100dvh-56px)]">
-      <div className="mx-auto flex min-h-[calc(100dvh-56px)] max-w-[1100px] flex-col md:flex-row">
-        {/* LEFT — description */}
-        <div className="flex flex-1 flex-col justify-center border-b px-5 py-8 sm:px-6 md:border-b-0 md:border-r md:px-10 md:py-12" style={{ borderColor: "var(--border)" }}>
+    <div className="min-h-[calc(100dvh-56px)]">
+      <div className="mx-auto flex min-h-[calc(100dvh-56px)] max-w-[1100px] flex-col lg:flex-row">
+        {/* LEFT — description (laptop only; hidden on mobile) */}
+        <div className="hidden flex-1 flex-col justify-center border-r px-10 py-12 lg:flex" style={{ borderColor: "var(--border)" }}>
           <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--text-faint)]">Script Forge</p>
           <h1 className="mt-3 text-[32px] font-semibold leading-[0.95] tracking-[-0.03em] sm:text-[40px] md:text-[44px]">
             Learn<br />
@@ -37,8 +37,8 @@ export default function LoginPage() {
             Curriculum inspired by <span className="text-[var(--text-muted)]">boot.dev</span> and <span className="text-[var(--text-muted)]">freeCodeCamp</span>. Content is original and written to explain, not just to list.
           </p>
         </div>
-        {/* RIGHT — auth card */}
-        <div className="flex flex-1 items-center justify-center bg-[var(--surface)] px-5 py-8 sm:px-6 md:bg-transparent md:px-10 md:py-12">
+        {/* RIGHT — auth card (only thing shown on mobile) */}
+        <div className="flex flex-1 items-center justify-center px-5 py-8 sm:px-6 lg:px-10 lg:py-12">
           <LoginForm />
         </div>
       </div>
