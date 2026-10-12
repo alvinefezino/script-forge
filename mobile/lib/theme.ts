@@ -1,0 +1,16 @@
+export const theme = {
+  bg: "#000000",
+  surface: "#0A0A0A",
+  surfaceRaised: "#141414",
+  surfaceHover: "#1A1A1A",
+  border: "rgba(255,255,255,0.08)",
+  borderStrong: "rgba(255,255,255,0.14)",
+  text: "#FAFAFA",
+  muted: "#A1A1A1",
+  faint: "#737373",
+  accent: "#F59E0B",
+  accentHover: "#D97706",
+  accentSoft: "rgba(245,158,11,0.12)",
+  success: "#22C55E",
+  danger: "#E5484D",
+} as const;
